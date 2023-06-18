@@ -1,8 +1,18 @@
 # CHANGELOG
 
-## v0.2.0 - Setup
+## v0.2.0 - Setup 30m
 
-TODO
+This setup uses Vite because it has almost no boilerplate, focuses on DX, and
+its' plugins are well-integrated. However, because it focuses on Browser,
+making it work with Express.js creates a small amount of boilerplate code.
+
+For testing, it uses Vitest because it works well with Vite and supertest for
+web API testing.
+
+It uses Prettier to fix the code formatting (for example, indentation and line
+length).
+
+It uses Eslint to fix the code styling (for example, unused vars).
 
 ## v0.1.0 - Solution Design 1h
 
