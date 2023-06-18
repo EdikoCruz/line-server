@@ -20,9 +20,9 @@ Also, three categories of errors:
 
 - User errors (like 4xx HTTP status code), such as invalid line or file id.
 - Runtime system errors (like 5xx HTTP status code), such as I/O processing
-errors, which the server might try to handle before exit. 
+  errors, which the server might try to handle before exit.
 - Setup system errors, such as the file requested does not exist and therefore
-cannot be served, which the server will log and exit.
+  cannot be served, which the server will log and exit.
 
 ### Web application
 
@@ -42,15 +42,14 @@ position of the line).
 The solution has two steps:
 
 - First, create a line index with the line id, line position (where it is on
-the file), and the line length (excluding the EOL, End Of Line). It will be on
-the RAM.
+  the file), and the line length (excluding the EOL, End Of Line). It will be on
+  the RAM.
 - Then, use the line index to skip all the previous lines and load the line to
-memory as a string.
+  memory as a string.
 
 The line index data structure is an array where the index is the line id minus
 one, and its value is a second array. That second array will contain the line
 position in the first position and the line length in the second.
-
 
 #### Possible improvements and edge cases
 
@@ -72,7 +71,7 @@ the line index when these number change.
 Improvement 2 algorithm:
 
 - step 1, get the root node (the only one that will always be at RAM because it
-is the most used).
+  is the most used).
 - step 2, check if the node has the line metadata. If not, go to step 3.
 - step 3, get which node must have the line metadata with a hash function. Load
-it from the HD, and do step 2.
+  it from the HD, and do step 2.
