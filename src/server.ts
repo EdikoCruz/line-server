@@ -1,14 +1,14 @@
 import express, { Request, Response } from "express";
-import { env } from "node:process";
 
 const app = express();
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.set("Content-Type", "text/html");
+  res.send(Buffer.from('<a href="/lines/1">api</a>'));
 });
 
-if (env.NODE_ENV === "production") {
-  app.listen(env.LINE_SERVER_PORT || 3000);
+if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "test") {
+  app.listen(process.env.PORT || 3000);
 }
 
 export const viteNodeApp = app;
