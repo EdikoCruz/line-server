@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.2.0 - Setup
+
+TODO
+
 ## v0.1.0 - Solution Design 1h
 
 The solution proposed has three main aspects, coding style, web application,
