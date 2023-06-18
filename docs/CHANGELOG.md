@@ -1,10 +1,17 @@
 # CHANGELOG
 
-## V0.4.1 - improve api entrypoint 30m
+## v0.5.0 - wrapping up (build and challenge requests) 1h
+
+- add build.sh
+- add run.sh
+- add documentation
+- add cross-env for setting env (NODE_ENV=production) ant start
+
+## v0.4.1 - improve api entrypoint 30m
 
 - add link to all cases
 
-## V0.4.0 - File model 2h
+## v0.4.0 - File model 2h
 
 - add utils: async singleton
 - add utils: lazy file reader (to read file line by line)
@@ -27,7 +34,7 @@ web API testing.
 It uses Prettier to fix the code formatting (for example, indentation and line
 length).
 
-It uses Eslint to fix the code styling (for example, unused vars).
+It uses Eslint to fix the code linting (for example, unused vars).
 
 ## v0.1.0 - Solution Design 1h
 

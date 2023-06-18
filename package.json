@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "start": "cross-env NODE_ENV=production node ./dist/server.mjs",
     "dev": "vite",
     "build": "vite build",
     "style": "eslint --ext .ts --ignore-path .gitignore --fix src && prettier . --write",
@@ -32,6 +33,7 @@
     "vitest": "^0.32.2"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "express": "^4.18.2"
   }
 }
