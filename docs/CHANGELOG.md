@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V0.4.0 - File model 2h
+
+- add utils: async singleton
+- add utils: lazy file reader (to read file line by line)
+- add utils: env (to get values from env or default)
+- add file model
+
 ## v0.3.0 - Web rest API 30m
 
 - Add /line/:id endpoint

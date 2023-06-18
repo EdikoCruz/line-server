@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { getLineById } from "./fileModel";
+import { getPort, isAppRunning } from "./utils.env";
 
 const app = express();
 
@@ -30,8 +31,8 @@ app.get("/lines/:id", (req: Request, res: Response) => {
     });
 });
 
-if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "test") {
-  app.listen(process.env.PORT || 3000);
+if (!isAppRunning()) {
+  app.listen(getPort());
 }
 
 export const viteNodeApp = app;
