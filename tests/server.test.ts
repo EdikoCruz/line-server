@@ -7,7 +7,7 @@ describe("SERVER:API", () => {
 
   test("It should return an a tag on GET /", async () => {
     const response = await server.get("/");
-    expect(response.text).toBe('<a href="/lines/1">api</a>');
+    expect(response.text.split("</a>").length).toBe(5);
   });
 
   describe("/lines/:line endpoint", () => {

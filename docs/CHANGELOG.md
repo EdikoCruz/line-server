@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V0.4.1 - improve api entrypoint 30m
+
+- add link to all cases
+
 ## V0.4.0 - File model 2h
 
 - add utils: async singleton

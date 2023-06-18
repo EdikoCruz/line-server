@@ -6,7 +6,14 @@ const app = express();
 
 app.get("/", (req: Request, res: Response) => {
   res.set("Content-Type", "text/html");
-  res.send(Buffer.from('<a href="/lines/1">api</a>'));
+  res.send(
+    Buffer.from(`
+    <a href="/lines/1">success</a><br>
+    <a href="/lines/-1">internal error</a><br>
+    <a href="/lines/a">wrong format</a><br>
+    <a href="/lines/6000">beyond the end of the file</a><br>
+  `)
+  );
 });
 
 app.get("/lines/:id", (req: Request, res: Response) => {
