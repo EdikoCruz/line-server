@@ -9,4 +9,27 @@ describe("SERVER:API", () => {
     const response = await server.get("/");
     expect(response.text).toBe('<a href="/lines/1">api</a>');
   });
+
+  describe("/lines/:line endpoint", () => {
+    test("It should response 200 when :line is valid", async () => {
+      const response = await server.get("/lines/1");
+      expect(response.statusCode).toBe(200);
+    });
+
+    describe("when invalid", () => {
+      test("It should response 413 when :line is beyond EOF", async () => {
+        const response = await server.get("/lines/10000");
+        expect(response.statusCode).toBe(413);
+      });
+      test("It should response 413 when :line is not a number", async () => {
+        const response = await server.get("/lines/abc");
+        expect(response.statusCode).toBe(413);
+      });
+    });
+
+    test("It should response 500 on server runtime error", async () => {
+      const response = await server.get("/lines/-1");
+      expect(response.statusCode).toBe(500);
+    });
+  });
 });

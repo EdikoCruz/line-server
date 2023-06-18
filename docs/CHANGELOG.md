@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.3.0 - Web rest API 30m
+
+- Add /line/:id endpoint
+
 ## v0.2.0 - Setup 30m
 
 This setup uses Vite because it has almost no boilerplate, focuses on DX, and
